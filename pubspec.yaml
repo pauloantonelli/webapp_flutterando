@@ -52,6 +52,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/flutterando_logo.png
+    - assets/linkedin-logo.png
+    - assets/linkedin-logo-branco.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -84,6 +86,6 @@ vars:
   get: flutter pub get
   runner: flutter pub run build_runner
 scripts:
-  mobx_build: $runner build
-  mobx_watch: $clean & $get & $runner watch
-  mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
+  mobb: $runner build
+  mobx: $clean & $get & $runner watch
+  mobc: $clean & $get & $runner build --delete-conflicting-outputs

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutterando/app/modules/home/widgets/icones-redes-sociais/icones_redes_sociais_controller.dart';
 import 'package:flutterando/app/shared/shapes/triangule_custom_shape.dart';
+import './icones_redes_sociais_controller.dart';
 
 class IconesRedesSociaisWidget extends StatefulWidget {
   @override
