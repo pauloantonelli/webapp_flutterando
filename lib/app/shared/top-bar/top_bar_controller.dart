@@ -2,13 +2,13 @@ import 'package:flutterando/app/shared/utils/screen-size.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
-part 'home_controller.g.dart';
+part 'top_bar_controller.g.dart';
 
 @Injectable()
-class HomeController = _HomeControllerBase with _$HomeController;
+class TopBarController = _TopBarControllerBase with _$TopBarController;
 
-abstract class _HomeControllerBase with Store {
+abstract class _TopBarControllerBase with Store {
   final ScreenSize screen;
 
-  _HomeControllerBase(this.screen);
+  _TopBarControllerBase(this.screen);
 }
