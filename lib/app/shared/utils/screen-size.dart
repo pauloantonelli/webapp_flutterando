@@ -5,30 +5,30 @@ part 'screen-size.g.dart';
 
 @Injectable(singleton: false)
 class ScreenSize {
-  bool isDesktopXl({BuildContext context}) {
+  bool isDesktopXl({@required BuildContext context}) {
     return MediaQuery.of(context).size.width > 1280.0;
   }
 
-  bool isDesktopLg({BuildContext context}) {
+  bool isDesktopLg({@required BuildContext context}) {
     return MediaQuery.of(context).size.width > 800.0 &&
         MediaQuery.of(context).size.width < 1280.0;
   }
 
-  bool isTablet({BuildContext context}) {
+  bool isTablet({@required BuildContext context}) {
     return MediaQuery.of(context).size.width > 599.0 &&
         MediaQuery.of(context).size.width < 800.0;
   }
 
-  bool isMobile({BuildContext context}) {
+  bool isMobile({@required BuildContext context}) {
     return MediaQuery.of(context).size.width > 375.0 &&
         MediaQuery.of(context).size.width < 599.0;
   }
 
-  bool isWatch({BuildContext context}) {
+  bool isWatch({@required BuildContext context}) {
     return MediaQuery.of(context).size.width < 375.0;
   }
 
-  double atualScreenWidth({BuildContext context}) {
+  double atualScreenWidth({@required BuildContext context}) {
     return MediaQuery.of(context).size.width;
   }
 }

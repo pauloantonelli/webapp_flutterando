@@ -6,6 +6,7 @@ import 'widgets/cases-brasileiros/cases_brasileiros_widget.dart';
 import 'widgets/co-organizadores/co_organizadores_widget.dart';
 import 'widgets/cover/cover_widget.dart';
 import 'widgets/pacotes-brasileiros/pacotes_brasileiros_widget.dart';
+import 'widgets/parceiros/parceiros_widget.dart';
 import 'widgets/ultimos-meetups/ultimos_meetups_widget.dart';
 import 'widgets/ultimos-videos/ultimos_videos_widget.dart';
 
@@ -35,7 +36,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               UltimosVideosWidget(),
               CoOrganizadoresWidget(),
               PacotesBrasileirosWidget(),
-              CasesBrasileirosWidget()
+              CasesBrasileirosWidget(),
+              ParceirosWidget()
             ],
           ),
         ),

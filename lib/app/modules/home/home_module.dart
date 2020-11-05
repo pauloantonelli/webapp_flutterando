@@ -1,3 +1,6 @@
+import 'widgets/parceiros/widgets/botao-quer-ser-parceiro/botao_quer_ser_parceiro_controller.dart';
+import 'widgets/parceiros/widgets/logo-parceiros/logo_parceiros_controller.dart';
+import 'widgets/parceiros/parceiros_controller.dart';
 import 'widgets/cases-brasileiros/cases_brasileiros_controller.dart';
 import 'widgets/cases-brasileiros/widgets/card-cases-brasileiros/card_cases_brasileiros_controller.dart';
 import 'widgets/co-organizadores/co_organizadores_controller.dart';
@@ -32,7 +35,10 @@ class HomeModule extends ChildModule {
         $CardPacotesBrasileirosController,
         $CardMyPackageController,
         $CasesBrasileirosController,
-        $CardCasesBrasileirosController
+        $CardCasesBrasileirosController,
+        $ParceirosController,
+        $LogoParceirosController,
+        $BotaoQuerSerParceiroController,
       ];
 
   @override
