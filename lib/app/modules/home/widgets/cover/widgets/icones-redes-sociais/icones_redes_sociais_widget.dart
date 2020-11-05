@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/shapes/triangule_custom_shape.dart';
+import 'package:flutterando/app/shared/social-icon-button/social_icon_button_widget.dart';
 import './icones_redes_sociais_controller.dart';
 
 class IconesRedesSociaisWidget extends StatefulWidget {
@@ -18,15 +19,7 @@ class _IconesRedesSociaisWidgetState extends ModularState<
       margin: EdgeInsets.only(bottom: 10.0),
       child: Row(
         children: [
-          Container(
-              width: 40.0,
-              height: 40.0,
-              padding: EdgeInsets.all(10.0),
-              margin: EdgeInsets.only(right: 5.0),
-              decoration: BoxDecoration(
-                  color: Colors.grey[900],
-                  borderRadius: BorderRadius.circular(10.0)),
-              child: Image.asset('assets/flutterando_logo.png')),
+          SocialIconButtonWidget(),
           CustomPaint(
             size: Size(15, 15),
             painter: TrianguleCustomShape(),

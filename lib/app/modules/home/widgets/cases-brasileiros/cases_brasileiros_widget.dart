@@ -48,6 +48,7 @@ class CasesBrasileirosWidgetState
             Container(
               width: MediaQuery.of(context).size.width,
               child: Wrap(
+                alignment: WrapAlignment.spaceAround,
                 children: [
                   CardCasesBrasileirosWidget(),
                   CardCasesBrasileirosWidget(),

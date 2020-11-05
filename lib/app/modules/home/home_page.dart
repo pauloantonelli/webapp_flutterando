@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/shared/footer/footer_widget.dart';
 import 'package:flutterando/app/shared/top-bar/top_bar_widget.dart';
 import 'home_controller.dart';
 import 'widgets/cases-brasileiros/cases_brasileiros_widget.dart';
@@ -37,7 +38,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               CoOrganizadoresWidget(),
               PacotesBrasileirosWidget(),
               CasesBrasileirosWidget(),
-              ParceirosWidget()
+              ParceirosWidget(),
+              FooterWidget()
             ],
           ),
         ),
