@@ -8,7 +8,7 @@ part of 'card_ultimos_videos_controller.dart';
 
 final $CardUltimosVideosController = BindInject(
   (i) => CardUltimosVideosController(i<ScreenSize>()),
-  singleton: true,
+  singleton: false,
   lazy: true,
 );
 

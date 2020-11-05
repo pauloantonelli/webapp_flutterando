@@ -4,7 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 part 'co_organizadores_controller.g.dart';
 
-@Injectable()
+@Injectable(singleton: false)
 class CoOrganizadoresController = _CoOrganizadoresControllerBase
     with _$CoOrganizadoresController;
 

@@ -1,6 +1,6 @@
 # flutterando
 
-A new Flutter project. Created by Slidy
+Site da flutterando, feito com flutter web
 
 ## Getting Started
 

@@ -4,7 +4,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 part 'card_ultimos_videos_controller.g.dart';
 
-@Injectable()
+@Injectable(singleton: false)
 class CardUltimosVideosController = _CardUltimosVideosControllerBase
     with _$CardUltimosVideosController;
 

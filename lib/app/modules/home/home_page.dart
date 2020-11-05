@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/top-bar/top_bar_widget.dart';
 import 'home_controller.dart';
+import 'widgets/cases-brasileiros/cases_brasileiros_widget.dart';
 import 'widgets/co-organizadores/co_organizadores_widget.dart';
 import 'widgets/cover/cover_widget.dart';
+import 'widgets/pacotes-brasileiros/pacotes_brasileiros_widget.dart';
 import 'widgets/ultimos-meetups/ultimos_meetups_widget.dart';
 import 'widgets/ultimos-videos/ultimos_videos_widget.dart';
 
@@ -32,6 +34,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
               UltimosMeetupsWidget(),
               UltimosVideosWidget(),
               CoOrganizadoresWidget(),
+              PacotesBrasileirosWidget(),
+              CasesBrasileirosWidget()
             ],
           ),
         ),

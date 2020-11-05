@@ -8,7 +8,7 @@ part of 'card_ultimos_meetups_controller.dart';
 
 final $CardUltimosMeetupsController = BindInject(
   (i) => CardUltimosMeetupsController(),
-  singleton: true,
+  singleton: false,
   lazy: true,
 );
 
@@ -20,40 +20,10 @@ final $CardUltimosMeetupsController = BindInject(
 
 mixin _$CardUltimosMeetupsController
     on _CardUltimosMeetupsControllerBase, Store {
-  final _$valueAtom = Atom(name: '_CardUltimosMeetupsControllerBase.value');
-
-  @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
-  }
-
-  @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
-    });
-  }
-
-  final _$_CardUltimosMeetupsControllerBaseActionController =
-      ActionController(name: '_CardUltimosMeetupsControllerBase');
-
-  @override
-  void increment() {
-    final _$actionInfo = _$_CardUltimosMeetupsControllerBaseActionController
-        .startAction(name: '_CardUltimosMeetupsControllerBase.increment');
-    try {
-      return super.increment();
-    } finally {
-      _$_CardUltimosMeetupsControllerBaseActionController
-          .endAction(_$actionInfo);
-    }
-  }
-
   @override
   String toString() {
     return '''
-value: ${value}
+
     ''';
   }
 }

@@ -54,6 +54,8 @@ flutter:
     - assets/flutterando_logo.png
     - assets/linkedin-logo.png
     - assets/linkedin-logo-branco.png
+    - assets/box.png
+    - assets/external-link.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
