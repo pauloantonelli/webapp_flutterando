@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'home_controller.dart';
+part of 'presenter/home_controller.dart';
 
 // **************************************************************************
 // InjectionGenerator
