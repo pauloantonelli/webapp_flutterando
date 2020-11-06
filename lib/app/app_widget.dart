@@ -8,7 +8,7 @@ class AppWidget extends StatelessWidget {
       navigatorKey: Modular.navigatorKey,
       title: 'Flutterando',
       theme: ThemeData(
-        primarySwatch: Colors.grey[900],
+        primarySwatch: Colors.grey,
       ),
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
