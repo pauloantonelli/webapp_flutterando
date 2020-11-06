@@ -25,7 +25,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return Scaffold(
       backgroundColor: Color(0xff090b0d),
       body: SingleChildScrollView(
-        physics: ScrollPhysics(parent: BouncingScrollPhysics()),
+        // physics: ScrollPhysics(parent: BouncingScrollPhysics()),
         child: Container(
           width: MediaQuery.of(context).size.width,
           child: Column(
