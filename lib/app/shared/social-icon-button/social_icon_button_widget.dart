@@ -24,7 +24,7 @@ class SocialIconButtonWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.grey[900],
           borderRadius: BorderRadius.circular(this.borderRadius)),
-      child: Image.asset(imageAssetSrc),
+      child: Image.network(imageAssetSrc),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/shapes/cover_home_ondulation.dart';
 import './widgets/icones-redes-sociais/icones_redes_sociais_widget.dart';
@@ -67,24 +68,20 @@ class _CoverWidgetState extends ModularState<CoverWidget, CoverController> {
                     ),
                   ),
                 ),
-                Container(
-                  margin: EdgeInsets.only(
-                    top: MediaQuery.of(context).size.width / 25,
-                  ),
-                  child: Wrap(
-                    alignment: WrapAlignment.start,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      IconesRedesSociaisWidget(),
-                      SizedBox(width: 20.0),
-                      IconesRedesSociaisWidget(),
-                      SizedBox(width: 20.0),
-                      IconesRedesSociaisWidget(),
-                      SizedBox(width: 20.0),
-                      IconesRedesSociaisWidget(),
-                    ],
-                  ),
-                ),
+                Observer(builder: (_) {
+                  return Container(
+                    margin: EdgeInsets.only(
+                      top: MediaQuery.of(context).size.width / 25,
+                    ),
+                    child: Container(
+                      child: Wrap(
+                        alignment: WrapAlignment.start,
+                        crossAxisAlignment: WrapCrossAlignment.center,
+                        children: controller.generateIconesRedesSociaisWidget(),
+                      ),
+                    ),
+                  );
+                }),
               ],
             ),
           ),

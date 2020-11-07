@@ -1,3 +1,6 @@
+import 'datasource/mock/get_social_members_numbers_datasource.dart';
+import 'domain/usecase/get_social_members_numbers.dart';
+import 'infra/respository/get_social_members_numbers_repository.dart';
 import 'presenter/widgets/parceiros/widgets/botao-quer-ser-parceiro/botao_quer_ser_parceiro_controller.dart';
 import 'presenter/widgets/parceiros/widgets/logo-parceiros/logo_parceiros_controller.dart';
 import 'presenter/widgets/parceiros/parceiros_controller.dart';
@@ -23,8 +26,15 @@ class HomeModule extends ChildModule {
   @override
   List<Bind> get binds => [
         $HomeController,
+
+        //cover
         $CoverController,
+        $SocialMembersNumbers,
+        $SocialMembersNumbersRepository,
+        $SocialMembersNumbersDataSource,
         $IconesRedesSociaisController,
+
+        //Ultimos meetups
         $UltimosMeetupsController,
         $CardUltimosMeetupsController,
         $CardUltimosVideosController,
