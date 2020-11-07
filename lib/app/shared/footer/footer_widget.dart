@@ -43,7 +43,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                     )),
                 FieldFormContatoWidget(
                   title: 'Nome',
-                  inputAutofocus: true,
+                  // inputAutofocus: true,
                 ),
                 FieldFormContatoWidget(
                   title: 'Email',
@@ -116,7 +116,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                                 padding: 8.0,
                                 borderRadius: 3.0,
                                 imageAssetSrc:
-                                    'assets/linkedin-logo-branco.png',
+                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
                               ),
                               SocialIconButtonWidget(
                                 width: 30.0,
@@ -124,7 +124,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                                 padding: 8.0,
                                 borderRadius: 3.0,
                                 imageAssetSrc:
-                                    'assets/linkedin-logo-branco.png',
+                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
                               ),
                               SocialIconButtonWidget(
                                 width: 30.0,
@@ -132,7 +132,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                                 padding: 8.0,
                                 borderRadius: 3.0,
                                 imageAssetSrc:
-                                    'assets/linkedin-logo-branco.png',
+                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
                               ),
                               SocialIconButtonWidget(
                                 width: 30.0,
@@ -140,7 +140,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                                 padding: 8.0,
                                 borderRadius: 3.0,
                                 imageAssetSrc:
-                                    'assets/linkedin-logo-branco.png',
+                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
                               ),
                               SocialIconButtonWidget(
                                 width: 30.0,
@@ -148,7 +148,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                                 padding: 8.0,
                                 borderRadius: 3.0,
                                 imageAssetSrc:
-                                    'assets/linkedin-logo-branco.png',
+                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
                               ),
                               SocialIconButtonWidget(
                                 width: 30.0,
@@ -156,7 +156,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                                 padding: 8.0,
                                 borderRadius: 3.0,
                                 imageAssetSrc:
-                                    'assets/linkedin-logo-branco.png',
+                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
                               ),
                               SocialIconButtonWidget(
                                 width: 30.0,
@@ -165,7 +165,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                                 marginRight: 0.0,
                                 borderRadius: 3.0,
                                 imageAssetSrc:
-                                    'assets/linkedin-logo-branco.png',
+                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
                               ),
                             ],
                           ),

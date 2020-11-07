@@ -20,7 +20,7 @@ class SocialMembersNumbers implements ISocialMembersNumbers {
   @override
   Future<Either<ErrorSocialMembersNumbers, List<SocialMembersNumbersEntity>>>
       getSocialMembersNumbers() async {
-    final result = await this._repository.getSocialMembers();
+    final result = await this._repository();
     if (result == null) {
       return Left(NullErrorSocialMembersNumbers());
     }

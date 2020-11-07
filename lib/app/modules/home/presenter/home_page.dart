@@ -24,19 +24,21 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff090b0d),
-      body: ListView(
+      body: SingleChildScrollView(
         // physics: ScrollPhysics(parent: BouncingScrollPhysics()),
-        children: [
-          TopBarWidget(),
-          CoverWidget(),
-          UltimosMeetupsWidget(),
-          UltimosVideosWidget(),
-          CoOrganizadoresWidget(),
-          PacotesBrasileirosWidget(),
-          CasesBrasileirosWidget(),
-          ParceirosWidget(),
-          FooterWidget()
-        ],
+        child: Column(
+          children: [
+            TopBarWidget(),
+            CoverWidget(),
+            UltimosMeetupsWidget(),
+            UltimosVideosWidget(),
+            CoOrganizadoresWidget(),
+            PacotesBrasileirosWidget(),
+            CasesBrasileirosWidget(),
+            ParceirosWidget(),
+            FooterWidget()
+          ],
+        ),
       ),
     );
   }

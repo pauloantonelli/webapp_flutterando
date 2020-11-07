@@ -1,3 +1,7 @@
+import 'package:flutterando/app/modules/home/datasource/mock/get_last_meetups_datasource.dart';
+import 'package:flutterando/app/modules/home/domain/usecase/get_last_meetups.dart';
+import 'package:flutterando/app/modules/home/infra/respository/get_last_meetups_repository.dart';
+
 import 'datasource/mock/get_social_members_numbers_datasource.dart';
 import 'domain/usecase/get_social_members_numbers.dart';
 import 'infra/respository/get_social_members_numbers_repository.dart';
@@ -27,18 +31,25 @@ class HomeModule extends ChildModule {
   List<Bind> get binds => [
         $HomeController,
 
-        //cover
+        // cover
         $CoverController,
+        $IconesRedesSociaisController,
         $SocialMembersNumbers,
         $SocialMembersNumbersRepository,
         $SocialMembersNumbersDataSource,
-        $IconesRedesSociaisController,
 
-        //Ultimos meetups
+        // ultimos meetups
         $UltimosMeetupsController,
         $CardUltimosMeetupsController,
+        $GetLastMeetups,
+        $GetLastMeetupsRepository,
+        $GetLastMeetupsDataSource,
+
+        // ultimos videos
         $CardUltimosVideosController,
         $UltimosVideosController,
+
+        // co-organizadores
         $CoOrganizadoresController,
         $CardCoOrganizadoresController,
         $PacotesBrasileirosController,

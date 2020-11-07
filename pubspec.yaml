@@ -21,6 +21,7 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  lottie: ^0.7.0+1
   dartz: ^0.9.2
   dio: ^3.0.10
   flutter_mobx: ^1.1.0+2
@@ -57,7 +58,7 @@ flutter:
     - assets/linkedin-logo-branco.png
     - assets/box.png
     - assets/external-link.png
-  #   - images/a_dot_ham.jpeg
+    - assets/lottie/loading-inifinity-animation.zip
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

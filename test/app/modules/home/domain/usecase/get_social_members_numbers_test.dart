@@ -12,12 +12,11 @@ class SocialMembersNumbersRepositoryMock extends Mock
 main() {
   final ISocialMembersNumbersRepository _repository =
       new SocialMembersNumbersRepositoryMock();
-  final SocialMembersNumbers usecase = new SocialMembersNumbers(_repository);
-  final socialMembersNumbersEntityMock = new SocialMembersNumbersEntity();
+  final ISocialMembersNumbers usecase = new SocialMembersNumbers(_repository);
+  final mockData = new SocialMembersNumbersEntity();
   group('SocialMembersNumbers Test', () {
     test('deve retornar lista numeros seguidores das redes sociais', () async {
-      when(_repository.getSocialMembers())
-          .thenAnswer((_) async => Right([socialMembersNumbersEntityMock]));
+      when(_repository()).thenAnswer((_) async => Right([mockData]));
       final resultFuture = usecase.getSocialMembersNumbers();
       expect(resultFuture, completes);
       final result = await usecase.getSocialMembersNumbers();
@@ -28,7 +27,7 @@ main() {
     test(
         'deve retornar o erro NullErrorSocialMembersNumbers se a lista de numeros seguidores das redes sociais for nula',
         () async {
-      when(_repository.getSocialMembers()).thenAnswer((_) async => null);
+      when(_repository()).thenAnswer((_) async => null);
       final resultFuture = usecase.getSocialMembersNumbers();
       expect(resultFuture, completes);
       final result = await usecase.getSocialMembersNumbers();

@@ -15,7 +15,7 @@ class SocialMembersNumbersRepository
   SocialMembersNumbersRepository(this._dataSource);
   Future<
       Either<NullDataSourceErrorSocialMembersNumbers,
-          List<SocialMembersNumbersEntity>>> getSocialMembers() async {
+          List<SocialMembersNumbersEntity>>> call() async {
     final result = await _dataSource.getSocialMembersDataSource();
     if (result == null) {
       return Left(NullDataSourceErrorSocialMembersNumbers());

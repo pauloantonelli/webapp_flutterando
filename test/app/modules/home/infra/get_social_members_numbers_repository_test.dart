@@ -12,7 +12,7 @@ class SocialMembersNumbersDataSourceMock extends Mock
 main() {
   final ISocialMembersNumbersDataSource _dataSource =
       new SocialMembersNumbersDataSourceMock();
-  final SocialMembersNumbersRepository usecase =
+  final SocialMembersNumbersRepository repository =
       new SocialMembersNumbersRepository(_dataSource);
   final socialMembersNumbersEntityMock = new SocialMembersNumbersEntity();
 
@@ -20,9 +20,9 @@ main() {
     test('deve retornar lista numeros seguidores das redes sociais', () async {
       when(_dataSource.getSocialMembersDataSource())
           .thenAnswer((_) async => [socialMembersNumbersEntityMock]);
-      final resultFuture = usecase.getSocialMembers();
+      final resultFuture = repository();
       expect(resultFuture, completes);
-      final result = await usecase.getSocialMembers();
+      final result = await repository();
       expect(result, isA<Right>());
       expect(result | null, isA<List<SocialMembersNumbersEntity>>());
     });
@@ -32,9 +32,9 @@ main() {
         () async {
       when(_dataSource.getSocialMembersDataSource())
           .thenAnswer((_) async => null);
-      final resultFuture = usecase.getSocialMembers();
+      final resultFuture = repository();
       expect(resultFuture, completes);
-      final result = await usecase.getSocialMembers();
+      final result = await repository();
       expect(result, isA<Left>());
       expect(result.fold((l) => l, (r) => r),
           isA<NullDataSourceErrorSocialMembersNumbers>());

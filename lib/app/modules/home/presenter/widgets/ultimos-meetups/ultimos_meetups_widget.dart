@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'ultimos_meetups_controller.dart';
-import 'widgets/card-ultimos-meetups/card_ultimos_meetups_widget.dart';
 
 class UltimosMeetupsWidget extends StatefulWidget {
   @override
@@ -44,17 +44,14 @@ class _UltimosMeetupsWidgetState
                     fontWeight: FontWeight.w300,
                   )),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: Wrap(
-                children: [
-                  CardUltimosMeetupsWidget(),
-                  CardUltimosMeetupsWidget(),
-                  CardUltimosMeetupsWidget(),
-                  CardUltimosMeetupsWidget(),
-                ],
-              ),
-            ),
+            Observer(builder: (_) {
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                child: Wrap(
+                  children: controller.generateCardUltimosMeetupsWidget(),
+                ),
+              );
+            }),
           ],
         ),
       ),

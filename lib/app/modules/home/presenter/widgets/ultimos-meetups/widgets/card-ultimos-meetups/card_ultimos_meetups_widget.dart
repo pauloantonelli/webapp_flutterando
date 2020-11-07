@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/domain/entity/last_meetups_entity.dart';
+import 'package:lottie/lottie.dart';
 
 import 'card_ultimos_meetups_controller.dart';
 
 class CardUltimosMeetupsWidget extends StatefulWidget {
+  final LastMeetUpsEntity model;
+
+  const CardUltimosMeetupsWidget({Key key, @required this.model})
+      : super(key: key);
   @override
   _CardUltimosMeetupsWidgetState createState() =>
       _CardUltimosMeetupsWidgetState();
@@ -26,47 +32,33 @@ class _CardUltimosMeetupsWidgetState extends ModularState<
               color: Color(0xff090b0d),
               borderRadius: BorderRadius.circular(5.0),
             ),
-            child: Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                Container(
-                  width: controller.larguraDefault,
-                  height: 170.0,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                  ),
-                  child: Image.network(
-                    'https://i.ytimg.com/vi/yRHl4Gy07PI/maxresdefault.jpg',
-                    fit: BoxFit.fill,
-                    color: Colors.blue[600],
-                    colorBlendMode: BlendMode.multiply,
-                  ),
-                ),
-                Container(
-                  padding: EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Como e porque contribuir em projetos de código aberto?',
-                        style: TextStyle(color: Colors.white, fontSize: 18.0),
-                      ),
-                      Text(
-                        'por: Pedro massango',
-                        style: TextStyle(color: Colors.white, fontSize: 12.0),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            child: Container(
+              width: controller.larguraDefault,
+              height: 170.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.0),
+              ),
+              child: Image.network(
+                widget.model.cardSrcImage,
+                fit: BoxFit.fill,
+                color: Colors.white70,
+                colorBlendMode: BlendMode.multiply,
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) {
+                    return child;
+                  }
+                  return Container(
+                      child: Lottie.asset(
+                          'assets/lottie/loading-inifinity-animation.zip'));
+                },
+              ),
             ),
           ),
           Container(
             width: controller.larguraDefault,
             margin: EdgeInsets.only(top: 25.0),
             child: Text(
-              'Flutter LATAM Conf 2ª Edição 2020',
+              widget.model.title,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 16.0,
@@ -77,7 +69,7 @@ class _CardUltimosMeetupsWidgetState extends ModularState<
             width: controller.larguraDefault,
             margin: EdgeInsets.only(top: 10.0),
             child: Text(
-              'quinta-feira, 10 de setembro de 2020 19:00 até 22:00',
+              widget.model.subtitle,
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 11.0,
