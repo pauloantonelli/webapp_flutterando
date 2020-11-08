@@ -1,7 +1,10 @@
+import 'package:flutterando/app/modules/home/datasource/mock/get_co_organizers_datasource.dart';
 import 'package:flutterando/app/modules/home/datasource/mock/get_last_meetups_datasource.dart';
 import 'package:flutterando/app/modules/home/datasource/mock/get_last_videos_channel_datasource.dart';
+import 'package:flutterando/app/modules/home/domain/usecase/get_co_organizers.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_last_meetups.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_last_videos_channel.dart';
+import 'package:flutterando/app/modules/home/infra/respository/get_co_organizers_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_last_meetups_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_last_videos_channel_repository.dart';
 import 'datasource/mock/get_social_members_numbers_datasource.dart';
@@ -57,11 +60,20 @@ class HomeModule extends ChildModule {
         // co-organizadores
         $CoOrganizadoresController,
         $CardCoOrganizadoresController,
+        $GetCoOrganizers,
+        $GetCoOrganizersRepository,
+        $GetCoOrganizersDataSource,
+
+        // pacotes brasileiros
         $PacotesBrasileirosController,
         $CardPacotesBrasileirosController,
         $CardMyPackageController,
+
+        // cases brasileiros
         $CasesBrasileirosController,
         $CardCasesBrasileirosController,
+
+        // parceiros
         $ParceirosController,
         $LogoParceirosController,
         $BotaoQuerSerParceiroController,

@@ -6,7 +6,7 @@ part 'get_last_meetups_datasource.g.dart';
 
 @Injectable()
 class GetLastMeetupsDataSource implements IGetLastMeetupsDataSource {
-  final socialMock = {
+  final meetupsMock = {
     'data': [
       {
         'last-meetups': [
@@ -48,16 +48,16 @@ class GetLastMeetupsDataSource implements IGetLastMeetupsDataSource {
 
   @override
   Future<List<LastMeetUpsEntity>> getLastMeetups() async {
-    final socialMemberList = socialMock['data'][0]['last-meetups'];
-    var socialList = new List<LastMeetUpsEntity>.generate(
-      socialMemberList.length,
+    final lastMeetupsList = meetupsMock['data'][0]['last-meetups'];
+    var meetupsList = new List<LastMeetUpsEntity>.generate(
+      lastMeetupsList.length,
       (index) => LastMeetUpsEntity(
-        title: socialMemberList[index]['meetup-title'],
-        subtitle: socialMemberList[index]['meetup-subtitle'],
-        cardSrcImage: socialMemberList[index]['image'],
-        externalLink: socialMemberList[index]['meetup-link'],
+        title: lastMeetupsList[index]['meetup-title'],
+        subtitle: lastMeetupsList[index]['meetup-subtitle'],
+        cardSrcImage: lastMeetupsList[index]['image'],
+        externalLink: lastMeetupsList[index]['meetup-link'],
       ),
     );
-    return socialList;
+    return meetupsList;
   }
 }

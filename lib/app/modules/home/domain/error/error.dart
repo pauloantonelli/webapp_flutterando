@@ -19,3 +19,9 @@ class NullErrorGetLastVideosChannel implements ErrorGetLastVideosChannel {}
 
 class NullDataSourceErrorGetLastVideosChannel
     implements ErrorGetLastVideosChannel {}
+
+class ErrorCoOrganizer implements HomeFailure {}
+
+class NullErrorCoOrganizer implements ErrorCoOrganizer {}
+
+class NullDataSourceErrorCoOrganizer implements ErrorCoOrganizer {}

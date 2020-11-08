@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/domain/entity/co_organizer_entity.dart';
 
 import 'card-co-organizadores_controller.dart';
 
 class CardCoOrganizadoresWidget extends StatefulWidget {
+  final CoOrganizerEntity model;
+
+  const CardCoOrganizadoresWidget({Key key, this.model}) : super(key: key);
   @override
   _CardCoOrganizadoresWidgetState createState() =>
       _CardCoOrganizadoresWidgetState();
@@ -40,8 +44,7 @@ class _CardCoOrganizadoresWidgetState extends ModularState<
                   width: 90.0,
                   height: 90.0,
                   child: CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        'https://media-exp1.licdn.com/dms/image/C5603AQG_fAe78FavuA/profile-displayphoto-shrink_800_800/0?e=1609977600&v=beta&t=XtUs9Tn6Ug0swkE-56K-E-AI9pOpB__N2ZL-86vjQYs'),
+                    backgroundImage: NetworkImage(widget.model.avatarSrcImage),
                     radius: 20.0,
                   ),
                 ),
@@ -52,7 +55,7 @@ class _CardCoOrganizadoresWidgetState extends ModularState<
                     children: [
                       Container(
                         child: Text(
-                          'Jessica Mariane Pereira',
+                          widget.model.name,
                           textAlign: TextAlign.center,
                           style: TextStyle(color: Colors.white, fontSize: 16.0),
                         ),
@@ -60,7 +63,7 @@ class _CardCoOrganizadoresWidgetState extends ModularState<
                       Container(
                         margin: EdgeInsets.symmetric(vertical: 20.0),
                         child: Text(
-                          'Co-organizer',
+                          widget.model.title,
                           style: TextStyle(color: Colors.white, fontSize: 11.0),
                         ),
                       ),

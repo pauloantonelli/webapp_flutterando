@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/shapes/cover_home_ondulation.dart';
 
 import 'co_organizadores_controller.dart';
-import 'widgets/card-co-organizadores/card-co-organizadores_widget.dart';
 
 class CoOrganizadoresWidget extends StatefulWidget {
   @override
@@ -48,26 +48,19 @@ class CoOrganizadoresWidgetState
                               fontWeight: FontWeight.w300,
                             )),
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: Wrap(
-                      alignment:
-                          (controller.screen.isMobile(context: context) ||
-                                  controller.screen.isTablet(context: context))
-                              ? WrapAlignment.center
-                              : WrapAlignment.start,
-                      children: [
-                        CardCoOrganizadoresWidget(),
-                        CardCoOrganizadoresWidget(),
-                        CardCoOrganizadoresWidget(),
-                        CardCoOrganizadoresWidget(),
-                        CardCoOrganizadoresWidget(),
-                        CardCoOrganizadoresWidget(),
-                        CardCoOrganizadoresWidget(),
-                        CardCoOrganizadoresWidget(),
-                      ],
-                    ),
-                  ),
+                  Observer(builder: (_) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        alignment: (controller.screen
+                                    .isMobile(context: context) ||
+                                controller.screen.isTablet(context: context))
+                            ? WrapAlignment.center
+                            : WrapAlignment.start,
+                        children: controller.generateCoOrganizers(),
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),
