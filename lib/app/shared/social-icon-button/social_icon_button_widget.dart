@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 
 class SocialIconButtonWidget extends StatelessWidget {
   final double width;
@@ -13,7 +14,8 @@ class SocialIconButtonWidget extends StatelessWidget {
       this.padding = 10.0,
       this.marginRight = 5.0,
       this.borderRadius = 10.0,
-      this.imageAssetSrc = 'assets/flutterando_logo.png'});
+      this.imageAssetSrc =
+          'https://flutterando.com.br/wp-content/uploads/2019/06/flutterando_logo.png'});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +26,18 @@ class SocialIconButtonWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.grey[900],
           borderRadius: BorderRadius.circular(this.borderRadius)),
-      child: Image.asset(imageAssetSrc),
+      child: Image.network(
+        imageAssetSrc,
+        loadingBuilder: (context, child, loadingProgress) {
+          if (loadingProgress == null) {
+            return child;
+          }
+          return Container(
+            child:
+                Lottie.asset('assets/lottie/loading-inifinity-animation.zip'),
+          );
+        },
+      ),
     );
   }
 }
