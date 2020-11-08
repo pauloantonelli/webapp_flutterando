@@ -2,11 +2,18 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/domain/entity/last_videos_channel_entity.dart';
+import 'package:flutterando/app/shared/image-network/image_network_widget.dart';
 import 'package:flutterando/app/shared/shapes/triangule_custom_shape.dart';
 
 import 'card_ultimos_videos_controller.dart';
 
 class CardUltimosVideosWidget extends StatefulWidget {
+  final LastVideosChannelEntity model;
+
+  const CardUltimosVideosWidget({Key key, @required this.model})
+      : super(key: key);
+
   @override
   _CardUltimosVideosWidgetState createState() =>
       _CardUltimosVideosWidgetState();
@@ -69,11 +76,10 @@ class _CardUltimosVideosWidgetState
                                   ? 265.0
                                   : controller.larguraDefault,
                               height: controller.larguraDefault - 70.0,
-                              child: Image.network(
-                                'https://i.ytimg.com/vi/8-mnyze0gKw/maxresdefault.jpg',
-                                fit: BoxFit.fill,
-                                color: Colors.blue[600],
+                              child: ImageNetworkWidget(
+                                srcImage: widget.model.cardSrcImage,
                                 colorBlendMode: BlendMode.multiply,
+                                color: Colors.blue[600],
                               ),
                             ),
                           ),
@@ -98,7 +104,7 @@ class _CardUltimosVideosWidgetState
                         children: [
                           Container(
                             child: Text(
-                              'Curso de Flutter #30 - Conversor de Moedas Desenhando a View',
+                              widget.model.title,
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 12.0,
@@ -108,7 +114,7 @@ class _CardUltimosVideosWidgetState
                           Container(
                             margin: EdgeInsets.symmetric(vertical: 15.0),
                             child: Text(
-                              'há 1 dia',
+                              widget.model.subtitle,
                               style: TextStyle(
                                   color: Colors.white, fontSize: 12.0),
                             ),

@@ -12,3 +12,10 @@ class ErrorGetLastMeetups implements HomeFailure {}
 class NullErrorGetLastMeetups implements ErrorGetLastMeetups {}
 
 class NullDataSourceErrorGetLastMeetups implements ErrorGetLastMeetups {}
+
+class ErrorGetLastVideosChannel implements HomeFailure {}
+
+class NullErrorGetLastVideosChannel implements ErrorGetLastVideosChannel {}
+
+class NullDataSourceErrorGetLastVideosChannel
+    implements ErrorGetLastVideosChannel {}

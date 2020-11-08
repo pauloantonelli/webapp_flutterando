@@ -35,6 +35,8 @@ class SocialMembersNumbersDataSource
       }
     ]
   };
+
+  @override
   Future<List<SocialMembersNumbersEntity>> getSocialMembersDataSource() async {
     final socialMemberList = socialMock['data'][0]['sociais'];
     var socialList = new List<SocialMembersNumbersEntity>.generate(

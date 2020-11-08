@@ -1,7 +1,9 @@
 import 'package:flutterando/app/modules/home/datasource/mock/get_last_meetups_datasource.dart';
+import 'package:flutterando/app/modules/home/datasource/mock/get_last_videos_channel_datasource.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_last_meetups.dart';
+import 'package:flutterando/app/modules/home/domain/usecase/get_last_videos_channel.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_last_meetups_repository.dart';
-
+import 'package:flutterando/app/modules/home/infra/respository/get_last_videos_channel_repository.dart';
 import 'datasource/mock/get_social_members_numbers_datasource.dart';
 import 'domain/usecase/get_social_members_numbers.dart';
 import 'infra/respository/get_social_members_numbers_repository.dart';
@@ -48,6 +50,9 @@ class HomeModule extends ChildModule {
         // ultimos videos
         $CardUltimosVideosController,
         $UltimosVideosController,
+        $GetLastVideosChannel,
+        $GetLastVideosChannelRepository,
+        $GetLastVideosChannelDataSource,
 
         // co-organizadores
         $CoOrganizadoresController,

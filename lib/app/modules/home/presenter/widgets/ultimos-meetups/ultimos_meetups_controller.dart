@@ -24,7 +24,7 @@ abstract class _UltimosMeetupsControllerBase with Store {
   }
 
   @action
-  getLastMeetups() async {
+  dynamic getLastMeetups() async {
     final result = await lastMeetups.getLastMeetups();
     result.fold((l) => l, (r) {
       listLastMeetUps = r;

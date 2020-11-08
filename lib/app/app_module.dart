@@ -1,3 +1,5 @@
+import 'package:flutterando/app/shared/image-network/image_network_controller.dart';
+
 import 'shared/badge-flutter/badge_flutter_controller.dart';
 import 'shared/footer/widgets/botao-enviar-mensagem/botao_enviar_mensagem_controller.dart';
 import 'app_controller.dart';
@@ -20,6 +22,7 @@ class AppModule extends MainModule {
         $FooterController,
         $FieldFormContatoController,
         $BotaoEnviarMensagemController,
+        $ImageNetworkController,
         $ScreenSize
       ];
 

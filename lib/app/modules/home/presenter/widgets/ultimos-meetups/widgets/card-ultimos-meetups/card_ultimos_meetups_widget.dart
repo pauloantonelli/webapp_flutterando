@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entity/last_meetups_entity.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutterando/app/shared/image-network/image_network_widget.dart';
 
 import 'card_ultimos_meetups_controller.dart';
 
@@ -38,19 +38,11 @@ class _CardUltimosMeetupsWidgetState extends ModularState<
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: Image.network(
-                widget.model.cardSrcImage,
-                fit: BoxFit.fill,
+              child: ImageNetworkWidget(
+                srcImage: widget.model.cardSrcImage,
+                fitStyle: BoxFit.fill,
                 color: Colors.white70,
                 colorBlendMode: BlendMode.multiply,
-                loadingBuilder: (context, child, loadingProgress) {
-                  if (loadingProgress == null) {
-                    return child;
-                  }
-                  return Container(
-                      child: Lottie.asset(
-                          'assets/lottie/loading-inifinity-animation.zip'));
-                },
               ),
             ),
           ),

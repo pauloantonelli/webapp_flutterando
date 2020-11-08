@@ -1,11 +1,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/shapes/cover_home_ondulation.dart';
 
 import 'ultimos_videos_controller.dart';
-import 'widgets/card-ultimos-videos/card_ultimos_videos_widget.dart';
 
 class UltimosVideosWidget extends StatefulWidget {
   @override
@@ -59,22 +59,19 @@ class _UltimosMeetupsWidgetState
                               fontWeight: FontWeight.w300,
                             )),
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: Wrap(
-                      alignment: (controller.screen
-                                  .isDesktopXl(context: context) ||
-                              controller.screen.isDesktopLg(context: context))
-                          ? WrapAlignment.end
-                          : WrapAlignment.center,
-                      children: [
-                        CardUltimosVideosWidget(),
-                        CardUltimosVideosWidget(),
-                        CardUltimosVideosWidget(),
-                        CardUltimosVideosWidget(),
-                      ],
-                    ),
-                  ),
+                  Observer(builder: (_) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        alignment: (controller.screen
+                                    .isDesktopXl(context: context) ||
+                                controller.screen.isDesktopLg(context: context))
+                            ? WrapAlignment.end
+                            : WrapAlignment.center,
+                        children: controller.generateCardUltimosVideosWidget(),
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),
