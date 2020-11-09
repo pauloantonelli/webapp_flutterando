@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/shapes/cover_home_ondulation.dart';
 
@@ -60,22 +61,18 @@ class _PacotesBrasileirosWidgetState extends ModularState<
                           fontWeight: FontWeight.w300,
                         )),
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      children: [
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardMyPackageWidget(),
-                      ],
-                    ),
-                  ),
+                  Observer(builder: (_) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        alignment: WrapAlignment.center,
+                        children: [
+                          ...controller.generateCardPacotesBrasileirosWidget(),
+                          CardMyPackageWidget(),
+                        ],
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),

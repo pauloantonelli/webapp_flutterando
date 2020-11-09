@@ -25,3 +25,9 @@ class ErrorCoOrganizer implements HomeFailure {}
 class NullErrorCoOrganizer implements ErrorCoOrganizer {}
 
 class NullDataSourceErrorCoOrganizer implements ErrorCoOrganizer {}
+
+class ErrorBrasilianPackages implements HomeFailure {}
+
+class NullErrorBrasilianPackages implements ErrorBrasilianPackages {}
+
+class NullDataSourceErrorBrasilianPackages implements ErrorBrasilianPackages {}

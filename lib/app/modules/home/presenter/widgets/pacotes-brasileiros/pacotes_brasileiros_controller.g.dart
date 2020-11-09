@@ -7,7 +7,8 @@ part of 'pacotes_brasileiros_controller.dart';
 // **************************************************************************
 
 final $PacotesBrasileirosController = BindInject(
-  (i) => PacotesBrasileirosController(i<ScreenSize>()),
+  (i) =>
+      PacotesBrasileirosController(i<ScreenSize>(), i<IGetBrasilianPackages>()),
   singleton: true,
   lazy: true,
 );
@@ -20,10 +21,36 @@ final $PacotesBrasileirosController = BindInject(
 
 mixin _$PacotesBrasileirosController
     on _PacotesBrasileirosControllerBase, Store {
+  final _$listBrasilianPackagesAtom =
+      Atom(name: '_PacotesBrasileirosControllerBase.listBrasilianPackages');
+
+  @override
+  List<BrasilianPackagesEntity> get listBrasilianPackages {
+    _$listBrasilianPackagesAtom.reportRead();
+    return super.listBrasilianPackages;
+  }
+
+  @override
+  set listBrasilianPackages(List<BrasilianPackagesEntity> value) {
+    _$listBrasilianPackagesAtom.reportWrite(value, super.listBrasilianPackages,
+        () {
+      super.listBrasilianPackages = value;
+    });
+  }
+
+  final _$getBrasilianPackagesAsyncAction =
+      AsyncAction('_PacotesBrasileirosControllerBase.getBrasilianPackages');
+
+  @override
+  Future getBrasilianPackages() {
+    return _$getBrasilianPackagesAsyncAction
+        .run(() => super.getBrasilianPackages());
+  }
+
   @override
   String toString() {
     return '''
-
+listBrasilianPackages: ${listBrasilianPackages}
     ''';
   }
 }

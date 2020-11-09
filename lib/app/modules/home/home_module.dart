@@ -1,13 +1,16 @@
-import 'package:flutterando/app/modules/home/datasource/mock/get_co_organizers_datasource.dart';
-import 'package:flutterando/app/modules/home/datasource/mock/get_last_meetups_datasource.dart';
-import 'package:flutterando/app/modules/home/datasource/mock/get_last_videos_channel_datasource.dart';
+import 'package:flutterando/app/modules/home/domain/usecase/brasilian_packages.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/brasilian_packages_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_co_organizers_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_last_meetups_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_last_videos_channel_datasource.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_co_organizers.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_last_meetups.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_last_videos_channel.dart';
+import 'package:flutterando/app/modules/home/infra/respository/brasilian_packages_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_co_organizers_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_last_meetups_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_last_videos_channel_repository.dart';
-import 'datasource/mock/get_social_members_numbers_datasource.dart';
+import 'external/datasource/mock/get_social_members_numbers_datasource.dart';
 import 'domain/usecase/get_social_members_numbers.dart';
 import 'infra/respository/get_social_members_numbers_repository.dart';
 import 'presenter/widgets/parceiros/widgets/botao-quer-ser-parceiro/botao_quer_ser_parceiro_controller.dart';
@@ -72,6 +75,9 @@ class HomeModule extends ChildModule {
         // cases brasileiros
         $CasesBrasileirosController,
         $CardCasesBrasileirosController,
+        $GetBrasilianPackages,
+        $GetBrasilianPackagesRepository,
+        $GetBrasilianPackagesDataSource,
 
         // parceiros
         $ParceirosController,
