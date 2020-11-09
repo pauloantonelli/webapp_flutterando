@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import 'cases_brasileiros_controller.dart';
-import 'widgets/card-cases-brasileiros/card_cases_brasileiros_widget.dart';
 
 class CasesBrasileirosWidget extends StatefulWidget {
   @override
@@ -45,17 +45,17 @@ class CasesBrasileirosWidgetState
                     fontWeight: FontWeight.w300,
                   )),
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              child: Wrap(
-                alignment: WrapAlignment.spaceAround,
-                children: [
-                  CardCasesBrasileirosWidget(),
-                  CardCasesBrasileirosWidget(),
-                  CardCasesBrasileirosWidget(),
-                ],
-              ),
-            ),
+            Observer(builder: (_) {
+              return Container(
+                width: MediaQuery.of(context).size.width,
+                child: Wrap(
+                  alignment: WrapAlignment.spaceAround,
+                  children: [
+                    ...controller.generateCardCasesBrasileirosWidget()
+                  ],
+                ),
+              );
+            }),
           ],
         ),
       ),

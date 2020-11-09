@@ -57,7 +57,7 @@ class CoOrganizadoresWidgetState
                                 controller.screen.isTablet(context: context))
                             ? WrapAlignment.center
                             : WrapAlignment.start,
-                        children: controller.generateCoOrganizers(),
+                        children: [...controller.generateCoOrganizers()],
                       ),
                     );
                   }),

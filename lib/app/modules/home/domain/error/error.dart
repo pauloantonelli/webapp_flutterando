@@ -31,3 +31,9 @@ class ErrorBrasilianPackages implements HomeFailure {}
 class NullErrorBrasilianPackages implements ErrorBrasilianPackages {}
 
 class NullDataSourceErrorBrasilianPackages implements ErrorBrasilianPackages {}
+
+class ErrorBrasilianCases implements HomeFailure {}
+
+class NullErrorBrasilianCases implements ErrorBrasilianCases {}
+
+class NullDataSourceErrorBrasilianCases implements ErrorBrasilianCases {}

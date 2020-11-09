@@ -7,7 +7,6 @@ import 'package:flutterando/app/shared/shapes/cover_home_ondulation.dart';
 
 import 'pacotes_brasileiros_controller.dart';
 import 'widgets/card-my-package/card_my_package_widget.dart';
-import 'widgets/card-pacotes-brasileiros/card_pacotes_brasileiros_widget.dart';
 
 class PacotesBrasileirosWidget extends StatefulWidget {
   @override
