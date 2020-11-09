@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/shapes/cover_home_ondulation.dart';
 
 import 'parceiros_controller.dart';
 import 'widgets/botao-quer-ser-parceiro/botao_quer_ser_parceiro_widget.dart';
-import 'widgets/logo-parceiros/logo_parceiros_widget.dart';
 
 class ParceirosWidget extends StatefulWidget {
   @override
@@ -53,24 +53,25 @@ class _ParceirosWidgetState
                             fontWeight: FontWeight.w300,
                           )),
                 ),
-                Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 200.0,
-                  margin: (controller.screen.isMobile(context: context) ||
-                          controller.screen.isTablet(context: context) ||
-                          controller.screen.isWatch(context: context))
-                      ? EdgeInsets.only(top: 40.0)
-                      : EdgeInsets.only(top: 60.0),
-                  child: Wrap(
-                    alignment: WrapAlignment.spaceEvenly,
-                    crossAxisAlignment: WrapCrossAlignment.center,
-                    children: [
-                      LogoParceirosWidget(),
-                      LogoParceirosWidget(),
-                      BotaoQuerSerParceiroWidget()
-                    ],
-                  ),
-                ),
+                Observer(builder: (_) {
+                  return Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 200.0,
+                    margin: (controller.screen.isMobile(context: context) ||
+                            controller.screen.isTablet(context: context) ||
+                            controller.screen.isWatch(context: context))
+                        ? EdgeInsets.only(top: 40.0)
+                        : EdgeInsets.only(top: 60.0),
+                    child: Wrap(
+                      alignment: WrapAlignment.spaceEvenly,
+                      crossAxisAlignment: WrapCrossAlignment.center,
+                      children: [
+                        ...controller.generateCardPacotesBrasileirosWidget(),
+                        BotaoQuerSerParceiroWidget()
+                      ],
+                    ),
+                  );
+                }),
               ],
             ),
           ),

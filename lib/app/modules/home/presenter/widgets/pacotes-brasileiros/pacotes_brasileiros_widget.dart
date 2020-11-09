@@ -1,12 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/shapes/cover_home_ondulation.dart';
 
 import 'pacotes_brasileiros_controller.dart';
 import 'widgets/card-my-package/card_my_package_widget.dart';
-import 'widgets/card-pacotes-brasileiros/card_pacotes_brasileiros_widget.dart';
 
 class PacotesBrasileirosWidget extends StatefulWidget {
   @override
@@ -60,22 +60,18 @@ class _PacotesBrasileirosWidgetState extends ModularState<
                           fontWeight: FontWeight.w300,
                         )),
                   ),
-                  Container(
-                    width: MediaQuery.of(context).size.width,
-                    child: Wrap(
-                      alignment: WrapAlignment.center,
-                      children: [
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardPacotesBrasileirosWidget(),
-                        CardMyPackageWidget(),
-                      ],
-                    ),
-                  ),
+                  Observer(builder: (_) {
+                    return Container(
+                      width: MediaQuery.of(context).size.width,
+                      child: Wrap(
+                        alignment: WrapAlignment.center,
+                        children: [
+                          ...controller.generateCardPacotesBrasileirosWidget(),
+                          CardMyPackageWidget(),
+                        ],
+                      ),
+                    );
+                  }),
                 ],
               ),
             ),

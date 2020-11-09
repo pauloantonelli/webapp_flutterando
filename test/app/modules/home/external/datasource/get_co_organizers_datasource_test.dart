@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutterando/app/modules/home/datasource/mock/get_co_organizers_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_co_organizers_datasource.dart';
 import 'package:flutterando/app/modules/home/domain/entity/co_organizer_entity.dart';
 import 'package:flutterando/app/modules/home/infra/datasource/get_co_organizers_datasource.dart';
 

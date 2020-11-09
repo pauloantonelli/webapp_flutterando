@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutterando/app/shared/image-network/image_network_widget.dart';
 
 class SocialIconButtonWidget extends StatelessWidget {
   final double width;
@@ -26,18 +26,7 @@ class SocialIconButtonWidget extends StatelessWidget {
       decoration: BoxDecoration(
           color: Colors.grey[900],
           borderRadius: BorderRadius.circular(this.borderRadius)),
-      child: Image.network(
-        imageAssetSrc,
-        loadingBuilder: (context, child, loadingProgress) {
-          if (loadingProgress == null) {
-            return child;
-          }
-          return Container(
-            child:
-                Lottie.asset('assets/lottie/loading-inifinity-animation.zip'),
-          );
-        },
-      ),
+      child: ImageNetworkWidget(srcImage: imageAssetSrc),
     );
   }
 }

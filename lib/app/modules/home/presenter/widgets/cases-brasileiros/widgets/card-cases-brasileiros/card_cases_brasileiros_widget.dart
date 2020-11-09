@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/domain/entity/brasilian_cases_entity.dart';
+import 'package:flutterando/app/shared/image-network/image_network_widget.dart';
 
 import 'card_cases_brasileiros_controller.dart';
 
 class CardCasesBrasileirosWidget extends StatefulWidget {
+  final BrasilianCasesEntity model;
+
+  const CardCasesBrasileirosWidget({Key key, this.model}) : super(key: key);
   @override
   _CardCasesBrasileirosWidgetState createState() =>
       _CardCasesBrasileirosWidgetState();
@@ -36,10 +41,8 @@ class _CardCasesBrasileirosWidgetState extends ModularState<
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: Image.network(
-                'https://s2.glbimg.com/gYsZ48gUX7YLOGKyVg2ZN1Rkc5U=/0x0:1920x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2018/J/C/F7pnkmQqWM20q7DfR93Q/newapp-01.png',
-                fit: BoxFit.fill,
-              ),
+              child: ImageNetworkWidget(
+                  srcImage: widget.model.srcImage, fitStyle: BoxFit.fill),
             ),
           ),
           Container(
@@ -50,7 +53,7 @@ class _CardCasesBrasileirosWidgetState extends ModularState<
                   width: controller.larguraDefault,
                   margin: EdgeInsets.symmetric(vertical: 20.0),
                   child: Text(
-                    'Nubank',
+                    widget.model.title,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 16.0,
@@ -59,13 +62,16 @@ class _CardCasesBrasileirosWidgetState extends ModularState<
                 ),
                 Container(
                   width: controller.larguraDefault,
+                  height: 40.0,
                   margin: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 20.0),
-                  child: Text(
-                    'O Nubank anunciou recentemente que está utilizando o Flutter em suas aplicações. No link abaixo você vê mais sobre o projeto.',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 11.0,
-                        fontWeight: FontWeight.w400),
+                  child: SingleChildScrollView(
+                    child: Text(
+                      widget.model.description,
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 11.0,
+                          fontWeight: FontWeight.w400),
+                    ),
                   ),
                 ),
                 Container(

@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutterando/app/modules/home/domain/entity/brasilian_packages_entity.dart';
 
 import 'card_pacotes_brasileiros_controller.dart';
 
 class CardPacotesBrasileirosWidget extends StatefulWidget {
+  final BrasilianPackagesEntity model;
+
+  const CardPacotesBrasileirosWidget({Key key, this.model}) : super(key: key);
   @override
   _CardPacotesBrasileirosWidgetState createState() =>
       _CardPacotesBrasileirosWidgetState();
@@ -43,7 +47,7 @@ class _CardPacotesBrasileirosWidgetState extends ModularState<
             ),
             Container(
               child: Text(
-                'native_pdf_view',
+                widget.model.packageName,
                 style: TextStyle(
                     color: Colors.white,
                     fontSize: 16.0,
@@ -52,17 +56,21 @@ class _CardPacotesBrasileirosWidgetState extends ModularState<
             ),
             Container(
               child: Text(
-                'serge_software',
+                widget.model.developerName,
               ),
             ),
             Container(
               child: Text(
-                '3.8.0',
+                widget.model.version,
               ),
             ),
             Container(
-              child: Text(
-                'Plugin to render PDF and show a PDF file on Web, MacOs 10.11+, Android 5.0+ and iOS.',
+              height: 80.0,
+              child: SingleChildScrollView(
+                child: Text(
+                  widget.model.description,
+                  overflow: TextOverflow.clip,
+                ),
               ),
             ),
             Container(
