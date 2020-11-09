@@ -1,20 +1,23 @@
-import 'package:flutterando/app/modules/home/domain/usecase/brasilian_packages.dart';
-import 'package:flutterando/app/modules/home/external/datasource/mock/brasilian_cases_datasource.dart';
-import 'package:flutterando/app/modules/home/external/datasource/mock/brasilian_packages_datasource.dart';
+import 'package:flutterando/app/modules/home/domain/usecase/get_brasilian_packages.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_brasilian_cases_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_brasilian_packages_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasource/mock/get_co_organizers_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasource/mock/get_last_meetups_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasource/mock/get_last_videos_channel_datasource.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_co_organizers.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_last_meetups.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_last_videos_channel.dart';
-import 'package:flutterando/app/modules/home/infra/respository/brasilian_cases_repository.dart';
-import 'package:flutterando/app/modules/home/infra/respository/brasilian_packages_repository.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_parceiros_datasource.dart';
+import 'package:flutterando/app/modules/home/infra/respository/get_brasilian_packages_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_co_organizers_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_last_meetups_repository.dart';
 import 'package:flutterando/app/modules/home/infra/respository/get_last_videos_channel_repository.dart';
-import 'domain/usecase/brasilian_cases.dart';
+import 'package:flutterando/app/modules/home/infra/respository/get_parceiros_repository.dart';
+import 'domain/usecase/get_brasilian_cases.dart';
+import 'domain/usecase/get_parceiros.dart';
 import 'external/datasource/mock/get_social_members_numbers_datasource.dart';
 import 'domain/usecase/get_social_members_numbers.dart';
+import 'infra/respository/get_brasilian_cases_repository.dart';
 import 'infra/respository/get_social_members_numbers_repository.dart';
 import 'presenter/widgets/parceiros/widgets/botao-quer-ser-parceiro/botao_quer_ser_parceiro_controller.dart';
 import 'presenter/widgets/parceiros/widgets/logo-parceiros/logo_parceiros_controller.dart';
@@ -74,21 +77,24 @@ class HomeModule extends ChildModule {
         $PacotesBrasileirosController,
         $CardPacotesBrasileirosController,
         $CardMyPackageController,
+        $GetBrasilianPackages,
+        $GetBrasilianPackagesRepository,
+        $GetBrasilianPackagesDataSource,
 
         // cases brasileiros
         $CasesBrasileirosController,
         $CardCasesBrasileirosController,
-        $GetBrasilianPackages,
-        $GetBrasilianPackagesRepository,
-        $GetBrasilianPackagesDataSource,
+        $GetBrasilianCases,
+        $GetBrasilianCasesRepository,
+        $GetBrasilianCasesDataSource,
 
         // parceiros
         $ParceirosController,
         $LogoParceirosController,
         $BotaoQuerSerParceiroController,
-        $GetBrasilianCases,
-        $GetBrasilianCasesRepository,
-        $GetBrasilianCasesDataSource
+        $GetParceiros,
+        $GetParceirosRepository,
+        $GetParceirosDataSource
       ];
 
   @override

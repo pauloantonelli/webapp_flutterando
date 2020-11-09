@@ -1,13 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'brasilian_cases_datasource.dart';
+part of 'get_brasilian_cases.dart';
 
 // **************************************************************************
 // InjectionGenerator
 // **************************************************************************
 
-final $GetBrasilianCasesDataSource = BindInject(
-  (i) => GetBrasilianCasesDataSource(),
+final $GetBrasilianCases = BindInject(
+  (i) => GetBrasilianCases(i<IGetBrasilianCasesRepository>()),
   singleton: true,
   lazy: true,
 );

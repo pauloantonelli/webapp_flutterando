@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutterando/app/modules/home/domain/entity/brasilian_cases_entity.dart';
-import 'package:flutterando/app/modules/home/domain/usecase/brasilian_cases.dart';
+import 'package:flutterando/app/modules/home/domain/usecase/get_brasilian_cases.dart';
 import 'package:flutterando/app/shared/utils/screen-size.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';

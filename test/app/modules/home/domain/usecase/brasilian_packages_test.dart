@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/modules/home/domain/entity/brasilian_packages_entity.dart';
-import 'package:flutterando/app/modules/home/domain/repository/brasilian_packages_repository.dart';
-import 'package:flutterando/app/modules/home/domain/usecase/brasilian_packages.dart';
+import 'package:flutterando/app/modules/home/domain/repository/get_brasilian_packages_repository.dart';
+import 'package:flutterando/app/modules/home/domain/usecase/get_brasilian_packages.dart';
 import 'package:mockito/mockito.dart';
 import 'package:flutterando/app/modules/home/domain/error/error.dart';
 

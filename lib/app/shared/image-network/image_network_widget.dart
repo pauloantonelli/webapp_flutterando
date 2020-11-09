@@ -11,15 +11,15 @@ class ImageNetworkWidget extends StatefulWidget {
   final BoxFit fitStyle;
   final Color color;
   final BlendMode colorBlendMode;
-  const ImageNetworkWidget(
-      {Key key,
-      @required this.srcImage,
-      this.width,
-      this.height,
-      this.fitStyle = BoxFit.fill,
-      this.color = Colors.white70,
-      this.colorBlendMode = BlendMode.clear})
-      : super(key: key);
+  const ImageNetworkWidget({
+    Key key,
+    @required this.srcImage,
+    this.width,
+    this.height,
+    this.fitStyle = BoxFit.fill,
+    this.color,
+    this.colorBlendMode = BlendMode.clear,
+  }) : super(key: key);
   @override
   _ImageNetworkWidgetState createState() => _ImageNetworkWidgetState();
 }

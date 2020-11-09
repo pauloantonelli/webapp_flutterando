@@ -1,8 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entity/brasilian_packages_entity.dart';
-import 'package:flutterando/app/modules/home/infra/datasource/brasilian_packages_datasource.dart';
+import 'package:flutterando/app/modules/home/infra/datasource/get_brasilian_packages_datasource.dart';
 
-part 'brasilian_packages_datasource.g.dart';
+part 'get_brasilian_packages_datasource.g.dart';
 
 @Injectable()
 class GetBrasilianPackagesDataSource

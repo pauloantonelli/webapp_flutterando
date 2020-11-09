@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/modules/home/domain/entity/brasilian_cases_entity.dart';
-import 'package:flutterando/app/modules/home/external/datasource/mock/brasilian_cases_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/datasource/brasilian_cases_datasource.dart';
+import 'package:flutterando/app/modules/home/external/datasource/mock/get_brasilian_cases_datasource.dart';
+import 'package:flutterando/app/modules/home/infra/datasource/get_brasilian_cases_datasource.dart';
 
 main() {
   final IGetBrasilianCasesDataSource dataSource =

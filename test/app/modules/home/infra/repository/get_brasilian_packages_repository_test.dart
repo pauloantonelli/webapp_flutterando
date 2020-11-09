@@ -2,9 +2,9 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:flutterando/app/modules/home/domain/entity/brasilian_packages_entity.dart';
 import 'package:flutterando/app/modules/home/domain/error/error.dart';
-import 'package:flutterando/app/modules/home/domain/repository/brasilian_packages_repository.dart';
-import 'package:flutterando/app/modules/home/infra/datasource/brasilian_packages_datasource.dart';
-import 'package:flutterando/app/modules/home/infra/respository/brasilian_packages_repository.dart';
+import 'package:flutterando/app/modules/home/domain/repository/get_brasilian_packages_repository.dart';
+import 'package:flutterando/app/modules/home/infra/datasource/get_brasilian_packages_datasource.dart';
+import 'package:flutterando/app/modules/home/infra/respository/get_brasilian_packages_repository.dart';
 import 'package:mockito/mockito.dart';
 
 class GetBrasilianPackagesDataSourceMock extends Mock

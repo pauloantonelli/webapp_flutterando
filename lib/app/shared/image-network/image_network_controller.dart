@@ -3,7 +3,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 
 part 'image_network_controller.g.dart';
 
-@Injectable()
+@Injectable(singleton: false)
 class ImageNetworkController = _ImageNetworkControllerBase
     with _$ImageNetworkController;
 

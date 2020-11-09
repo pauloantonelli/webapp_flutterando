@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/modules/home/domain/entity/brasilian_cases_entity.dart';
+import 'package:flutterando/app/shared/image-network/image_network_widget.dart';
 
 import 'card_cases_brasileiros_controller.dart';
 
@@ -40,10 +41,8 @@ class _CardCasesBrasileirosWidgetState extends ModularState<
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: Image.network(
-                widget.model.srcImage,
-                fit: BoxFit.fill,
-              ),
+              child: ImageNetworkWidget(
+                  srcImage: widget.model.srcImage, fitStyle: BoxFit.fill),
             ),
           ),
           Container(

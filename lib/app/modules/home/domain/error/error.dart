@@ -37,3 +37,9 @@ class ErrorBrasilianCases implements HomeFailure {}
 class NullErrorBrasilianCases implements ErrorBrasilianCases {}
 
 class NullDataSourceErrorBrasilianCases implements ErrorBrasilianCases {}
+
+class ErrorParceiros implements HomeFailure {}
+
+class NullErrorParceiros implements ErrorParceiros {}
+
+class NullDataSourceErrorParceiros implements ErrorParceiros {}
