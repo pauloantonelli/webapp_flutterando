@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:lottie/lottie.dart';
+import 'package:flutterando/app/shared/loading/loading_widget.dart';
 
 import 'image_network_controller.dart';
 
@@ -40,10 +40,7 @@ class _ImageNetworkWidgetState
           if (loadingProgress == null) {
             return child;
           }
-          return Container(
-            child:
-                Lottie.asset('assets/lottie/loading-inifinity-animation.zip'),
-          );
+          return LoadingWidget();
         },
       ),
     );

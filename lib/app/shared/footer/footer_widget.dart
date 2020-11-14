@@ -16,7 +16,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: controller.screen.atualScreenWidth(context: context),
+      width: controller.screen.atualWidth(context: context),
       padding: (controller.screen.isMobile(context: context) ||
               controller.screen.isTablet(context: context) ||
               controller.screen.isWatch(context: context))

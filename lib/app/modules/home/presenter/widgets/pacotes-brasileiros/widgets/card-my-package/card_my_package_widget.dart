@@ -20,7 +20,9 @@ class _CardMyPackageWidgetState
             : 190.0;
     return FlatButton(
       padding: EdgeInsets.all(0.0),
-      onPressed: () {},
+      onPressed: () {
+        controller.messageSooner(context);
+      },
       child: Container(
         width: larguraDefault,
         height: 350.0,

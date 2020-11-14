@@ -43,3 +43,17 @@ class ErrorParceiros implements HomeFailure {}
 class NullErrorParceiros implements ErrorParceiros {}
 
 class NullDataSourceErrorParceiros implements ErrorParceiros {}
+
+class ErrorSendBrasilianPackages implements HomeFailure {}
+
+class NullErrorSendBrasilianPackages implements ErrorSendBrasilianPackages {
+  final String message;
+
+  NullErrorSendBrasilianPackages(this.message);
+}
+
+class DataSourceErrorSendBrasilianPackages
+    implements ErrorSendBrasilianPackages {}
+
+class NullDataSourceErrorSendBrasilianPackages
+    implements ErrorSendBrasilianPackages {}
