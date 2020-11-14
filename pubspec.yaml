@@ -86,11 +86,11 @@ flutter:
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
 vars:
-  clean: flutter clean
-  get: flutter pub get
-  runner: flutter pub run build_runner
+  clean: fvm flutter clean
+  get: fvm flutter pub get
+  runner: fvm flutter pub run build_runner
 scripts:
-  mobb: $runner build
+  mobb: $clean & $runner build --delete-conflicting-outputs
   mobx: $clean & $get & $runner watch
   mobc: $clean & $get & $runner build --delete-conflicting-outputs
   build_web: $clean & $get &  $runner build & flutter build web

@@ -13,7 +13,7 @@ class GetParceirosDataSource implements IGetParceirosDataSource {
           {
             'title': 'Instituro Adventista de Tecnologia',
             'image':
-                'https://lh3.googleusercontent.com/proxy/1PNeV0eBjCWoMPApH4kZvcs02j-1MRBVNraHnjijkC244h-Y2mUAR4eEjorHjTFWtA1I6RyMZjiJm7bYiUn9sm5rkWgC2iZEUC0DoFJotcdqzXnurDgzt2RyXaVzgpcmtWIDzRw_pMLgBKLo3wTqbw',
+                'https://yt3.ggpht.com/a/AATXAJxIp_-9i_AOYPaGzC24Y7YmHsw6FBm7TxqBC_Qo=s900-c-k-c0x00ffffff-no-rj',
           },
           {
             'title': 'F-Team | Development Expertise',

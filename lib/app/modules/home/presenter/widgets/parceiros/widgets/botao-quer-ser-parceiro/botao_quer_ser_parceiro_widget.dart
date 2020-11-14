@@ -17,7 +17,7 @@ class _BotaoQuerSerParceiroWidgetState extends ModularState<
       width: (controller.screen.isMobile(context: context) ||
               controller.screen.isTablet(context: context) ||
               controller.screen.isWatch(context: context))
-          ? controller.screen.atualScreenWidth(context: context) - 100.0
+          ? controller.screen.atualWidth(context: context) - 100.0
           : controller.larguraDefaultBotaoQueroSerParceiro,
       height: 50.0,
       margin: (controller.screen.isMobile(context: context) ||

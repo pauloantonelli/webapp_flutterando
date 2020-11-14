@@ -8,7 +8,7 @@ part of 'image_network_controller.dart';
 
 final $ImageNetworkController = BindInject(
   (i) => ImageNetworkController(),
-  singleton: true,
+  singleton: false,
   lazy: true,
 );
 

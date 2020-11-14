@@ -28,11 +28,11 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         // physics: ScrollPhysics(parent: BouncingScrollPhysics()),
         child: Column(
           children: [
-            TopBarWidget(),
-            CoverWidget(),
-            UltimosMeetupsWidget(),
-            UltimosVideosWidget(),
-            CoOrganizadoresWidget(),
+            // TopBarWidget(),
+            // CoverWidget(),
+            // UltimosMeetupsWidget(),
+            // UltimosVideosWidget(),
+            // CoOrganizadoresWidget(),
             PacotesBrasileirosWidget(),
             CasesBrasileirosWidget(),
             ParceirosWidget(),

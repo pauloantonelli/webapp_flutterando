@@ -28,7 +28,7 @@ class ScreenSize {
     return MediaQuery.of(context).size.width < 375.0;
   }
 
-  double atualScreenWidth({@required BuildContext context}) {
+  double atualWidth({@required BuildContext context}) {
     return MediaQuery.of(context).size.width;
   }
 }

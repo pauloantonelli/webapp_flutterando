@@ -14,7 +14,7 @@ class _BotaoEnviarMensagemWidgetState extends ModularState<
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: controller.screen.atualScreenWidth(context: context),
+      width: controller.screen.atualWidth(context: context),
       height: 50.0,
       margin: (controller.screen.isMobile(context: context) ||
               controller.screen.isTablet(context: context) ||

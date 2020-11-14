@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutterando/app/modules/home/domain/usecase/get_brasilian_packages.dart';
 import 'package:flutterando/app/modules/home/external/datasource/mock/get_brasilian_cases_datasource.dart';
 import 'package:flutterando/app/modules/home/external/datasource/mock/get_brasilian_packages_datasource.dart';
@@ -15,6 +16,9 @@ import 'package:flutterando/app/modules/home/infra/respository/get_last_videos_c
 import 'package:flutterando/app/modules/home/infra/respository/get_parceiros_repository.dart';
 import 'domain/usecase/get_brasilian_cases.dart';
 import 'domain/usecase/get_parceiros.dart';
+import 'domain/usecase/send_brasilian_packages.dart';
+import 'infra/respository/send_brasilian_packages_repository.dart';
+import 'external/datasource/mock/send_brasilian_packages_datasource.dart';
 import 'external/datasource/mock/get_social_members_numbers_datasource.dart';
 import 'domain/usecase/get_social_members_numbers.dart';
 import 'infra/respository/get_brasilian_cases_repository.dart';
@@ -80,6 +84,9 @@ class HomeModule extends ChildModule {
         $GetBrasilianPackages,
         $GetBrasilianPackagesRepository,
         $GetBrasilianPackagesDataSource,
+        $SendBrasilianPackages,
+        $SendBrasilianPackagesRepository,
+        $SendBrasilianPackagesDataSource,
 
         // cases brasileiros
         $CasesBrasileirosController,
@@ -94,7 +101,9 @@ class HomeModule extends ChildModule {
         $BotaoQuerSerParceiroController,
         $GetParceiros,
         $GetParceirosRepository,
-        $GetParceirosDataSource
+        $GetParceirosDataSource,
+
+        Bind((i) => Dio())
       ];
 
   @override
