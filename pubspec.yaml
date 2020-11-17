@@ -94,4 +94,4 @@ scripts:
   mobb: $runner build
   mobx: $clean & $get & $runner watch --delete-conflicting-outputs
   mobc: $clean & $get & $runner build --delete-conflicting-outputs
-  build_web: $clean & $get &  $runner build & flutter build web
+  build_web: $clean & $get & $runner build & fvm flutter build web
