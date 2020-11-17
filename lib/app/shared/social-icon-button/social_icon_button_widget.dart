@@ -14,7 +14,7 @@ class SocialIconButtonWidget extends StatefulWidget {
   final bool cursor;
   SocialIconButtonWidget({
     @required this.imageAssetSrc,
-    this.link,
+    this.link = '',
     this.width = 40.0,
     this.heigth = 40.0,
     this.padding = 10.0,

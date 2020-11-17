@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutterando/app/shared/social-icon-button/social_icon_button_widget.dart';
 import 'package:flutterando/app/shared/utils/screen-size.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 part 'footer_controller.g.dart';
 
@@ -22,15 +22,30 @@ abstract class _FooterControllerBase with Store {
 
   List<Widget> generateSocialIconButtonWidget() {
     return socialIconList
-        .map((socialIcon) => SocialIconButtonWidget(
+        .map(
+          (socialIcon) => FlatButton(
+            onPressed: () {
+              launchUrl(url: socialIcon['link']);
+            },
+            child: Container(
               width: 30.0,
-              heigth: 30.0,
-              padding: 8.0,
-              borderRadius: 3.0,
-              imageAssetSrc: socialIcon['icon'],
-              link: socialIcon['link'],
-              cursor: true,
-            ))
+              height: 30.0,
+              padding: EdgeInsets.all(8.0),
+              decoration: BoxDecoration(
+                  color: Colors.grey[900],
+                  borderRadius: BorderRadius.circular(3.0)),
+              child: Image.asset(socialIcon['icon']),
+            ),
+          ),
+        )
         .toList();
+  }
+
+  launchUrl({String url}) async {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 }
