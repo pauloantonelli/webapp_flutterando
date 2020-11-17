@@ -7,7 +7,7 @@ part of 'card_ultimos_meetups_controller.dart';
 // **************************************************************************
 
 final $CardUltimosMeetupsController = BindInject(
-  (i) => CardUltimosMeetupsController(),
+  (i) => CardUltimosMeetupsController(i<ScreenSize>()),
   singleton: false,
   lazy: true,
 );

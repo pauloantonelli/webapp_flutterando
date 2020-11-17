@@ -18,9 +18,10 @@ publish_to: "none" # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.10.0 <3.0.0"
 
 dependencies:
+  url_launcher: ^5.7.10
   lottie: ^0.7.0+1
   dartz: ^0.9.2
   dio: ^3.0.10
@@ -54,11 +55,11 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/flutterando_logo.png
-    - assets/linkedin-logo.png
-    - assets/linkedin-logo-branco.png
     - assets/box.png
     - assets/external-link.png
     - assets/lottie/loading-inifinity-animation.zip
+    - assets/redes_sociais/linkedin-logo-branco.png
+    - assets/redes_sociais/instagram-logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
@@ -90,7 +91,7 @@ vars:
   get: fvm flutter pub get
   runner: fvm flutter pub run build_runner
 scripts:
-  mobb: $clean & $runner build --delete-conflicting-outputs
-  mobx: $clean & $get & $runner watch
+  mobb: $runner build
+  mobx: $clean & $get & $runner watch --delete-conflicting-outputs
   mobc: $clean & $get & $runner build --delete-conflicting-outputs
   build_web: $clean & $get &  $runner build & flutter build web

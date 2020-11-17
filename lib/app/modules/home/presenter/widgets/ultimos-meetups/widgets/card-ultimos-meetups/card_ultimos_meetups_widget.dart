@@ -21,54 +21,63 @@ class _CardUltimosMeetupsWidgetState extends ModularState<
   Widget build(BuildContext context) {
     return Container(
       width: controller.larguraDefault,
-      margin: EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: controller.larguraDefault,
-            height: 170.0,
-            decoration: BoxDecoration(
-              color: Color(0xff090b0d),
-              borderRadius: BorderRadius.circular(5.0),
-            ),
-            child: Container(
+      margin: (controller.screen.isMobile(context: context) ||
+              controller.screen.isWatch(context: context))
+          ? EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 30.0)
+          : EdgeInsets.fromLTRB(0.0, 0.0, 10.0, 30.0),
+      child: FlatButton(
+        onPressed: () {
+          controller.launchUrl(url: widget.model.externalLink);
+        },
+        padding: EdgeInsets.all(0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
               width: controller.larguraDefault,
               height: 170.0,
               decoration: BoxDecoration(
+                color: Color(0xff090b0d),
                 borderRadius: BorderRadius.circular(5.0),
               ),
-              child: ImageNetworkWidget(
-                srcImage: widget.model.cardSrcImage,
-                fitStyle: BoxFit.fill,
-                color: Colors.white70,
-                colorBlendMode: BlendMode.multiply,
+              child: Container(
+                width: controller.larguraDefault,
+                height: 170.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.0),
+                ),
+                child: ImageNetworkWidget(
+                  srcImage: widget.model.cardSrcImage,
+                  fitStyle: BoxFit.fill,
+                  color: Colors.white70,
+                  colorBlendMode: BlendMode.multiply,
+                ),
               ),
             ),
-          ),
-          Container(
-            width: controller.larguraDefault,
-            margin: EdgeInsets.only(top: 25.0),
-            child: Text(
-              widget.model.title,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500),
+            Container(
+              width: controller.larguraDefault,
+              margin: EdgeInsets.only(top: 25.0),
+              child: Text(
+                widget.model.title,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w500),
+              ),
             ),
-          ),
-          Container(
-            width: controller.larguraDefault,
-            margin: EdgeInsets.only(top: 10.0),
-            child: Text(
-              widget.model.subtitle,
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 11.0,
-                  fontWeight: FontWeight.w400),
+            Container(
+              width: controller.larguraDefault,
+              margin: EdgeInsets.only(top: 10.0),
+              child: Text(
+                widget.model.subtitle,
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 11.0,
+                    fontWeight: FontWeight.w400),
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -30,10 +30,10 @@ abstract class _CardMyPackageControllerBase with Store {
     this.packageNameController = new TextEditingController();
     this.authorNameController = new TextEditingController();
     this.packageLinkController = new TextEditingController();
-    // this.disableAllInputs();
+    this.disableForm();
   }
 
-  disableAllInputs() {
+  disableForm() {
     this.enabledInputControllerState = false;
   }
 
@@ -159,11 +159,14 @@ abstract class _CardMyPackageControllerBase with Store {
                     decoration: BoxDecoration(
                         color: Colors.yellow[800],
                         borderRadius: BorderRadius.circular(10.0)),
-                    child: Text(
-                      'em breve',
-                      textAlign: TextAlign.center,
-                      style: TextStyle(fontSize: 12.0, color: Colors.white),
-                    ),
+                    child: this.enabledInputControllerState
+                        ? Container()
+                        : Text(
+                            'em breve',
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(fontSize: 12.0, color: Colors.white),
+                          ),
                   ),
                 ],
               ),
