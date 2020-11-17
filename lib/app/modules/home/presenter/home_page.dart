@@ -25,14 +25,15 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return Scaffold(
       backgroundColor: Color(0xff090b0d),
       body: SingleChildScrollView(
+        // desativado por bug nas imagens(web)
         // physics: ScrollPhysics(parent: BouncingScrollPhysics()),
         child: Column(
           children: [
-            // TopBarWidget(),
-            // CoverWidget(),
-            // UltimosMeetupsWidget(),
-            // UltimosVideosWidget(),
-            // CoOrganizadoresWidget(),
+            TopBarWidget(),
+            CoverWidget(),
+            UltimosMeetupsWidget(),
+            UltimosVideosWidget(),
+            CoOrganizadoresWidget(),
             PacotesBrasileirosWidget(),
             CasesBrasileirosWidget(),
             ParceirosWidget(),

@@ -81,7 +81,9 @@ class _CardPacotesBrasileirosWidgetState extends ModularState<
                 borderRadius: BorderRadius.circular(3.0),
               ),
               child: FlatButton(
-                onPressed: () {},
+                onPressed: () {
+                  controller.launchUrl(url: widget.model.externalLink);
+                },
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

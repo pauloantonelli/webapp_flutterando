@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutterando/app/shared/badge-flutter/badge_flutter_widget.dart';
-import 'package:flutterando/app/shared/social-icon-button/social_icon_button_widget.dart';
 
 import 'footer_controller.dart';
 import 'widgets/botao-enviar-mensagem/botao_enviar_mensagem_widget.dart';
@@ -110,63 +109,7 @@ class _FooterWidgetState extends ModularState<FooterWidget, FooterController> {
                           child: Wrap(
                             alignment: WrapAlignment.end,
                             children: [
-                              SocialIconButtonWidget(
-                                width: 30.0,
-                                heigth: 30.0,
-                                padding: 8.0,
-                                borderRadius: 3.0,
-                                imageAssetSrc:
-                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
-                              ),
-                              SocialIconButtonWidget(
-                                width: 30.0,
-                                heigth: 30.0,
-                                padding: 8.0,
-                                borderRadius: 3.0,
-                                imageAssetSrc:
-                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
-                              ),
-                              SocialIconButtonWidget(
-                                width: 30.0,
-                                heigth: 30.0,
-                                padding: 8.0,
-                                borderRadius: 3.0,
-                                imageAssetSrc:
-                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
-                              ),
-                              SocialIconButtonWidget(
-                                width: 30.0,
-                                heigth: 30.0,
-                                padding: 8.0,
-                                borderRadius: 3.0,
-                                imageAssetSrc:
-                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
-                              ),
-                              SocialIconButtonWidget(
-                                width: 30.0,
-                                heigth: 30.0,
-                                padding: 8.0,
-                                borderRadius: 3.0,
-                                imageAssetSrc:
-                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
-                              ),
-                              SocialIconButtonWidget(
-                                width: 30.0,
-                                heigth: 30.0,
-                                padding: 8.0,
-                                borderRadius: 3.0,
-                                imageAssetSrc:
-                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
-                              ),
-                              SocialIconButtonWidget(
-                                width: 30.0,
-                                heigth: 30.0,
-                                padding: 8.0,
-                                marginRight: 0.0,
-                                borderRadius: 3.0,
-                                imageAssetSrc:
-                                    'https://png.pngtree.com/png-clipart/20190613/original/pngtree-linked-in-icon-png-image_3584840.jpg',
-                              ),
+                              ...controller.generateSocialIconButtonWidget()
                             ],
                           ),
                         ),

@@ -41,7 +41,10 @@ class _TopBarWidgetState extends ModularState<TopBarWidget, TopBarController> {
                     margin: EdgeInsets.only(right: 10.0),
                     child: RaisedButton(
                       color: Colors.grey[900],
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.launchUrl(
+                            url: 'https://forum.flutterando.com.br/');
+                      },
                       child: Text(
                         'Forum',
                         style: TextStyle(color: Colors.white),
@@ -52,7 +55,10 @@ class _TopBarWidgetState extends ModularState<TopBarWidget, TopBarController> {
                     margin: EdgeInsets.only(right: 10.0),
                     child: RaisedButton(
                       color: Colors.grey[900],
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.launchUrl(
+                            url: 'https://linktr.ee/flutterando');
+                      },
                       child: Text(
                         'Links Úteis',
                         style: TextStyle(color: Colors.white),
@@ -96,7 +102,10 @@ class _TopBarWidgetState extends ModularState<TopBarWidget, TopBarController> {
                         borderRadius: BorderRadius.circular(5.0)),
                     child: IconButton(
                       hoverColor: Colors.grey[900],
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.launchUrl(
+                            url: 'https://forum.flutterando.com.br/');
+                      },
                       icon: Icon(
                         Icons.forum,
                         color: Colors.white,
@@ -110,7 +119,10 @@ class _TopBarWidgetState extends ModularState<TopBarWidget, TopBarController> {
                         borderRadius: BorderRadius.circular(5.0)),
                     child: IconButton(
                       hoverColor: Colors.grey[900],
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.launchUrl(
+                            url: 'https://linktr.ee/flutterando');
+                      },
                       icon: Icon(
                         Icons.link,
                         color: Colors.white,

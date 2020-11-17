@@ -20,12 +20,12 @@ class ScreenSize {
   }
 
   bool isMobile({@required BuildContext context}) {
-    return MediaQuery.of(context).size.width > 375.0 &&
+    return MediaQuery.of(context).size.width > 319.0 &&
         MediaQuery.of(context).size.width < 599.0;
   }
 
   bool isWatch({@required BuildContext context}) {
-    return MediaQuery.of(context).size.width < 375.0;
+    return MediaQuery.of(context).size.width < 319.0;
   }
 
   double atualWidth({@required BuildContext context}) {

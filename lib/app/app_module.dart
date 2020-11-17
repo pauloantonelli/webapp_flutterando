@@ -12,6 +12,7 @@ import 'shared/footer/footer_controller.dart';
 import 'shared/footer/widgets/field-form-contato/field_form_contato_controller.dart';
 import 'shared/top-bar/top_bar_controller.dart';
 import 'shared/utils/screen-size.dart';
+import 'shared/social-icon-button/social_icon_button_controller.dart';
 
 class AppModule extends MainModule {
   @override
@@ -22,6 +23,7 @@ class AppModule extends MainModule {
         $FooterController,
         $FieldFormContatoController,
         $BotaoEnviarMensagemController,
+        $SocialIconButtonController,
         $ImageNetworkController,
         $ScreenSize
       ];

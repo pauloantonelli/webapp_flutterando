@@ -13,7 +13,7 @@ class SocialMembersNumbersDataSource
         'sociais': [
           {
             'logo':
-                'https://i.pinimg.com/originals/02/cc/ab/02ccab390b217e004bd6b7adccf7aec0.png',
+                'https://muitocurioso.org/wp-content/uploads/2019/05/youtube-logo.png',
             'seguidores': 30.0
           },
           {

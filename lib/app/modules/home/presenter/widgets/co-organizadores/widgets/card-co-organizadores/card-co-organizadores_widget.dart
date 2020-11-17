@@ -17,21 +17,16 @@ class _CardCoOrganizadoresWidgetState extends ModularState<
     CardCoOrganizadoresWidget, CardCoOrganizadoresController> {
   @override
   Widget build(BuildContext context) {
-    final double larguraDefault =
-        (controller.screen.isMobile(context: context) ||
-                controller.screen.isTablet(context: context))
-            ? 265.0
-            : 150.0;
     return Container(
-      width: larguraDefault,
+      width: controller.larguraDefault,
       margin: (controller.screen.isMobile(context: context) ||
-              controller.screen.isTablet(context: context))
+              controller.screen.isWatch(context: context))
           ? EdgeInsets.fromLTRB(0.0, 0.0, 15.0, 30.0)
           : EdgeInsets.fromLTRB(0.0, 0.0, 20.0, 30.0),
       child: Column(
         children: [
           Container(
-            width: larguraDefault,
+            width: controller.larguraDefault,
             height: 300.0,
             decoration: BoxDecoration(
               color: Color(0xff121920),
@@ -67,17 +62,22 @@ class _CardCoOrganizadoresWidgetState extends ModularState<
                           style: TextStyle(color: Colors.white, fontSize: 11.0),
                         ),
                       ),
-                      Container(
-                        width: 35.0,
-                        height: 35.0,
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          color: Colors.grey[900],
-                        ),
-                        child: Image.asset(
-                          'assets/linkedin-logo-branco.png',
-                          width: 20.0,
-                          height: 20.0,
+                      FlatButton(
+                        onPressed: () {
+                          controller.launchUrl(url: widget.model.linkedinLink);
+                        },
+                        child: Container(
+                          width: 35.0,
+                          height: 35.0,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            color: Colors.grey[900],
+                          ),
+                          child: Image.asset(
+                            'assets/redes_sociais/linkedin-logo-branco.png',
+                            width: 20.0,
+                            height: 20.0,
+                          ),
                         ),
                       )
                     ],

@@ -8,7 +8,7 @@ part of 'social_icon_button_controller.dart';
 
 final $SocialIconButtonController = BindInject(
   (i) => SocialIconButtonController(),
-  singleton: true,
+  singleton: false,
   lazy: true,
 );
 
@@ -19,39 +19,10 @@ final $SocialIconButtonController = BindInject(
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$SocialIconButtonController on _SocialIconButtonControllerBase, Store {
-  final _$valueAtom = Atom(name: '_SocialIconButtonControllerBase.value');
-
-  @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
-  }
-
-  @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
-    });
-  }
-
-  final _$_SocialIconButtonControllerBaseActionController =
-      ActionController(name: '_SocialIconButtonControllerBase');
-
-  @override
-  void increment() {
-    final _$actionInfo = _$_SocialIconButtonControllerBaseActionController
-        .startAction(name: '_SocialIconButtonControllerBase.increment');
-    try {
-      return super.increment();
-    } finally {
-      _$_SocialIconButtonControllerBaseActionController.endAction(_$actionInfo);
-    }
-  }
-
   @override
   String toString() {
     return '''
-value: ${value}
+
     ''';
   }
 }

@@ -61,7 +61,7 @@ class _UltimosMeetupsWidgetState
                   ),
                   Observer(builder: (_) {
                     return Container(
-                      width: MediaQuery.of(context).size.width,
+                      width: controller.screen.atualWidth(context: context),
                       child: Wrap(
                         alignment: (controller.screen
                                     .isDesktopXl(context: context) ||

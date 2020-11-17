@@ -1,6 +1,8 @@
 # flutterando
 
-Site da flutterando, feito com flutter web
+Site da flutterando, feito com flutter web/desktop
+
+mockup: https://www.figma.com/proto/bS61sPYB1nHIJncA66dBiE/Landing-Page?node-id=108%3A3830&scaling=scale-down-width
 
 ## Getting Started
 
